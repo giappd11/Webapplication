@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cqumaModelStoreContainer" CdmEntityContainer="ContextDB">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="cqumaModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PossitionAdd" ColumnName="PossitionAdd" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OverseeingPersons">
+      <EntityTypeMapping TypeName="cqumaModel.OverseeingPerson">
+        <MappingFragment StoreEntitySet="OverseeingPerson">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+          <ScalarProperty Name="ActionNeeded" ColumnName="ActionNeeded" />
+          <ScalarProperty Name="ResponsibleOfficePerson" ColumnName="ResponsibleOfficePerson" />
+          <ScalarProperty Name="ResourcesNeeded" ColumnName="ResourcesNeeded" />
+          <ScalarProperty Name="OverseeingPerson1" ColumnName="OverseeingPerson" />
+          <ScalarProperty Name="TimeFrame" ColumnName="TimeFrame" />
+          <ScalarProperty Name="Eveidences" ColumnName="Eveidences" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourcesNeededs">
+      <EntityTypeMapping TypeName="cqumaModel.ResourcesNeeded">
+        <MappingFragment StoreEntitySet="ResourcesNeeded">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+          <ScalarProperty Name="NQFLevel" ColumnName="NQFLevel" />
+          <ScalarProperty Name="NQFIDNumber" ColumnName="NQFIDNumber" />
+          <ScalarProperty Name="NQFRegistrationStatus" ColumnName="NQFRegistrationStatus" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+          <ScalarProperty Name="Emails" ColumnName="Emails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responsibles">
+      <EntityTypeMapping TypeName="cqumaModel.Responsible">
+        <MappingFragment StoreEntitySet="Responsible">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+          <ScalarProperty Name="NQFLevel" ColumnName="NQFLevel" />
+          <ScalarProperty Name="Accreditation" ColumnName="Accreditation" />
+          <ScalarProperty Name="AccreditationDate" ColumnName="AccreditationDate" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+          <ScalarProperty Name="Emails" ColumnName="Emails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleAccreditations">
+      <EntityTypeMapping TypeName="cqumaModel.RoleAccreditation">
+        <MappingFragment StoreEntitySet="RoleAccreditation">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Addacc" ColumnName="Addacc" />
+          <ScalarProperty Name="Edit" ColumnName="Edit" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleNQFRegistrations">
+      <EntityTypeMapping TypeName="cqumaModel.RoleNQFRegistration">
+        <MappingFragment StoreEntitySet="RoleNQFRegistration">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="AddNQF" ColumnName="AddNQF" />
+          <ScalarProperty Name="Edit" ColumnName="Edit" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleQualityAudits">
+      <EntityTypeMapping TypeName="cqumaModel.RoleQualityAudit">
+        <MappingFragment StoreEntitySet="RoleQualityAudits">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="AddQuality" ColumnName="AddQuality" />
+          <ScalarProperty Name="Edit" ColumnName="Edit" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

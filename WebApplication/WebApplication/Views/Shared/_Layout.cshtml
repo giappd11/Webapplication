@@ -1,0 +1,232 @@
+﻿ 
+<!doctype html> <!--
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+         @Styles.Render("~/Content/Theme/css") 
+	</head>
+	
+	<body>
+		
+		<!-- Begin of #height-wrapper -->
+		<div id="height-wrapper">
+            
+			<!-- Begin of header -->
+			<header>
+				<!-- Begin of the header toolbar -->
+				<div id="header_toolbar">
+					<div class="container_12">
+						<h1 class="grid_8">Peach &ndash; Clean &amp; Smooth Admin Template</h1>
+						<!-- Start of right part -->
+						<div class="grid_4">
+							<!-- A small toolbar button -->
+							<div class="toolbar_small">
+								<div class="toolbutton">
+									<span>3</span>
+									<img src="../images/icons/16x16/mail.png" width="16" height="16" alt="mail" >
+								</div>
+								<div class="toolbox">
+									<span class="arrow"></span>
+									<h3>Your Messages</h3>
+									<ul class="mail">
+										<li>
+											<a href="#"> <strong>10:15</strong>Need your Help!
+											<small>
+												From: John
+											</small> </a>
+										</li>
+										<li>
+											<a href="#"> <strong>9:55</strong>New comment on you theme
+											<small>
+												From: themeforest
+											</small></a>
+										</li>
+										<li>
+											<a href="#"> <strong>Yest.</strong>Successfull backup
+											<small>
+												From: System
+											</small></a>
+										</li>
+										<li class="read">
+											<a href="#"> <strong>2 days</strong>Bug report
+											<small>
+												From: Jane
+											</small></a>
+										</li>
+									</ul>
+									<a class="inbox" href="#">Go to inbox &raquo;</a>
+								</div>
+							</div> <!-- End of small toolbar button -->
+							
+							<!-- A large toolbar button -->
+							<div class="toolbar_large">
+								<div class="toolbutton">
+									<div class="toolicon">
+										<img src="../images/icons/16x16/user.png" width="16" height="16" alt="user" >
+									</div>
+									<div class="toolmenu"> 
+                                        @Html.Partial("_LoginPartial") 
+									</div>
+								</div>
+							</div> <!-- End of large toolbar button -->
+						</div>
+						<!-- End of right part -->
+					</div>
+				</div>
+				<!-- End of the header toolbar -->
+				
+				<!-- Start of the main header bar -->
+				<nav id="header_main">
+					<div class="container_12">
+						<!-- Start of the main navigation -->
+						<ul id="nav_main">
+							<li class="current">
+								<a href="#">
+								<img src="../images/icons/25x25/dark/computer-imac.png" width=25 height=25 alt="">
+								Qualiti Audits</a>
+								<ul>
+									<li class="current">
+										 @Html.ActionLink("Users", "Users", "Account") 
+									</li>
+									<li>
+                                         @Html.ActionLink("Privileges", "Privileges", "Account")  
+									</li> 
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+								<img src="../images/icons/25x25/dark/blocks---images.png" width=25 height=25 alt="">
+								NQF Registration</a>
+								<ul>
+									<li>
+										<a href="forms.html">Forms</a>
+									</li>
+									<li>
+										<a href="gallery.html">Gallery</a>
+									</li>
+									<li>
+										<a href="lists.html">Lists</a>
+									</li>
+									<li>
+										<a href="tables.html">Tables</a>
+									</li>
+									<li>
+										<a href="tabs.html">Tabs</a>
+									</li>
+									<li class="last-child">
+										<a href="wizard.html">Wizard</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+								<img src="../images/icons/25x25/dark/user-comment.png" width=25 height=25 alt="">
+								User Information</a>
+								<ul>
+									<li>
+										<a href="alert_boxes.html">Alert Boxes</a>
+									</li>
+									<li>
+										<a href="messages.html">Messages (Fallr)</a>
+									</li>
+									<li>
+										<a href="notifications.html">Notifications</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+								<img src="../images/icons/25x25/dark/robot.png" width=25 height=25 alt="">
+								Plugins</a>
+								<ul>
+									<li>
+										<a href="charts.html">Charts</a>
+									</li>
+									<li>
+										<a href="calendar.html">Calendar</a>
+									</li>
+									<li>
+										<a href="explorer.html">Explorer</a>
+									</li>
+									<li>
+										<a href="editor.html">Rich Text Editor</a>
+									</li>
+									<li>
+										<a href="tooltips.html">Tooltips</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<!-- End of the main navigation -->
+					</div>
+				</nav>
+				<div id="nav_sub"></div>
+			</header>
+			
+			<!-- Start of the content -->
+			<div role="main" class="container_12" id="content-wrapper">
+				  
+                @RenderSection("featured", required: false)
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+                 
+				 
+				 
+				<div class="push clear"></div>
+					
+			</div> <!-- End of #content-wrapper -->
+			<div class="clear"></div>
+			<div class="push"></div> <!-- BUGFIX if problems with sidebar in Chrome -->
+				
+		</div> <!-- End of #height-wrapper -->
+			
+		<!-- Start of footer-->
+		<footer>
+			<div class="container_12">
+				Copyright &copy; 2011 YourCompany, all rights reserved.
+				<div id="button_bar">
+					<ul>
+						<li>
+							<span><a href="dashboard.html">Dashboard</a></span>
+						</li>
+						<li>
+							<span><a href="#">Settings</a></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer><!-- End of footer-->
+	@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/script")  	
+	 
+     @RenderSection("scripts", required: false)
+		<script>
+			$(window).load(function() {
+				$('#accordion').accordion();
+				$(window).resize();
+			});
+		</script>
+		
+		<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to
+		support IE 6.
+		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+		<!--[if lt IE 7 ]>
+		<script defer
+		src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script
+		defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+		<![endif]-->
+	</body>
+</html>

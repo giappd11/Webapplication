@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86ef1d02d7494734a26e3cf0025e2ec5" Name="Diagram1">
+        <EntityTypeShape EntityType="cqumaModel.Employee" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.OverseeingPerson" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.ResourcesNeeded" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.Responsible" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.RoleAccreditation" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.RoleNQFRegistration" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cqumaModel.RoleQualityAudit" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <AssociationConnector Association="cqumaModel.FK__Overseein__Membe__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="cqumaModel.FK__Resources__Membe__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="cqumaModel.FK__Responsib__Membe__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="cqumaModel.FK__RoleAccre__Remov__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="cqumaModel.FK__RoleNQFRe__Remov__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="cqumaModel.FK__RoleQuali__Remov__4BAC3F29" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cqumaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ContextDB" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="cqumaModel.Employee" />
+    <EntitySet Name="OverseeingPersons" EntityType="cqumaModel.OverseeingPerson" />
+    <EntitySet Name="ResourcesNeededs" EntityType="cqumaModel.ResourcesNeeded" />
+    <EntitySet Name="Responsibles" EntityType="cqumaModel.Responsible" />
+    <EntitySet Name="RoleAccreditations" EntityType="cqumaModel.RoleAccreditation" />
+    <EntitySet Name="RoleNQFRegistrations" EntityType="cqumaModel.RoleNQFRegistration" />
+    <EntitySet Name="RoleQualityAudits" EntityType="cqumaModel.RoleQualityAudit" />
+    <AssociationSet Name="FK__Overseein__Membe__59FA5E80" Association="cqumaModel.FK__Overseein__Membe__59FA5E80">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="OverseeingPerson" EntitySet="OverseeingPersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resources__Membe__571DF1D5" Association="cqumaModel.FK__Resources__Membe__571DF1D5">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ResourcesNeeded" EntitySet="ResourcesNeededs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Responsib__Membe__5441852A" Association="cqumaModel.FK__Responsib__Membe__5441852A">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Responsible" EntitySet="Responsibles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RoleAccre__Remov__5165187F" Association="cqumaModel.FK__RoleAccre__Remov__5165187F">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="RoleAccreditation" EntitySet="RoleAccreditations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RoleNQFRe__Remov__4E88ABD4" Association="cqumaModel.FK__RoleNQFRe__Remov__4E88ABD4">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="RoleNQFRegistration" EntitySet="RoleNQFRegistrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RoleQuali__Remov__4BAC3F29" Association="cqumaModel.FK__RoleQuali__Remov__4BAC3F29">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="RoleQualityAudits" EntitySet="RoleQualityAudits" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PossitionAdd" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Department" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OverseeingPersons" Relationship="cqumaModel.FK__Overseein__Membe__59FA5E80" FromRole="Employee" ToRole="OverseeingPerson" />
+    <NavigationProperty Name="ResourcesNeededs" Relationship="cqumaModel.FK__Resources__Membe__571DF1D5" FromRole="Employee" ToRole="ResourcesNeeded" />
+    <NavigationProperty Name="Responsibles" Relationship="cqumaModel.FK__Responsib__Membe__5441852A" FromRole="Employee" ToRole="Responsible" />
+    <NavigationProperty Name="RoleAccreditation" Relationship="cqumaModel.FK__RoleAccre__Remov__5165187F" FromRole="Employee" ToRole="RoleAccreditation" />
+    <NavigationProperty Name="RoleNQFRegistration" Relationship="cqumaModel.FK__RoleNQFRe__Remov__4E88ABD4" FromRole="Employee" ToRole="RoleNQFRegistration" />
+    <NavigationProperty Name="RoleQualityAudit" Relationship="cqumaModel.FK__RoleQuali__Remov__4BAC3F29" FromRole="Employee" ToRole="RoleQualityAudits" />
+  </EntityType>
+  <EntityType Name="OverseeingPerson">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="Recommendations" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ActionNeeded" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ResponsibleOfficePerson" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ResourcesNeeded" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="OverseeingPerson1" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="TimeFrame" Type="DateTime" Precision="3" />
+    <Property Name="Eveidences" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__Overseein__Membe__59FA5E80" FromRole="OverseeingPerson" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="ResourcesNeeded">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="QualificationName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="NQFLevel" Type="Int32" />
+    <Property Name="NQFIDNumber" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="NQFRegistrationStatus" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+    <Property Name="ReviewDate" Type="DateTime" Precision="3" />
+    <Property Name="Emails" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__Resources__Membe__571DF1D5" FromRole="ResourcesNeeded" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Responsible">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="QualificationName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="NQFLevel" Type="Int32" />
+    <Property Name="Accreditation" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="AccreditationDate" Type="DateTime" Precision="3" />
+    <Property Name="ReviewDate" Type="DateTime" Precision="3" />
+    <Property Name="Emails" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__Responsib__Membe__5441852A" FromRole="Responsible" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="RoleAccreditation">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="Addacc" Type="Int32" Nullable="false" />
+    <Property Name="Edit" Type="Int32" Nullable="false" />
+    <Property Name="Remove" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__RoleAccre__Remov__5165187F" FromRole="RoleAccreditation" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="RoleNQFRegistration">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="AddNQF" Type="Int32" Nullable="false" />
+    <Property Name="Edit" Type="Int32" Nullable="false" />
+    <Property Name="Remove" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__RoleNQFRe__Remov__4E88ABD4" FromRole="RoleNQFRegistration" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="RoleQualityAudit">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="AddQuality" Type="Int32" Nullable="false" />
+    <Property Name="Edit" Type="Int32" Nullable="false" />
+    <Property Name="Remove" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="cqumaModel.FK__RoleQuali__Remov__4BAC3F29" FromRole="RoleQualityAudits" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK__Overseein__Membe__59FA5E80">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="OverseeingPerson" Type="cqumaModel.OverseeingPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="OverseeingPerson">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resources__Membe__571DF1D5">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="ResourcesNeeded" Type="cqumaModel.ResourcesNeeded" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="ResourcesNeeded">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Responsib__Membe__5441852A">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="Responsible" Type="cqumaModel.Responsible" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="Responsible">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RoleAccre__Remov__5165187F">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="RoleAccreditation" Type="cqumaModel.RoleAccreditation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="RoleAccreditation">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RoleNQFRe__Remov__4E88ABD4">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="RoleNQFRegistration" Type="cqumaModel.RoleNQFRegistration" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="RoleNQFRegistration">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RoleQuali__Remov__4BAC3F29">
+    <End Role="Employee" Type="cqumaModel.Employee" Multiplicity="1" />
+    <End Role="RoleQualityAudits" Type="cqumaModel.RoleQualityAudit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="RoleQualityAudits">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
